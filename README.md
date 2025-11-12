@@ -1,7 +1,6 @@
 # MV-SLAM-Exploration
 
-General SLAM demo scripts using OpenCV and NumPy. The repository contains small, focused examples demonstrating common frontend techniques (feature detection, descriptor matching, and optical flow) that are useful when building SLAM pipelines.
-
+General SLAM demo scripts using OpenCV and NumPy.
 ## Repository layout
 - `SIFT.py`, `FAST.py`, `ORB.py`, `LK.py` — demo scripts (detection, matching, tracking).
 - `Images/` — place input images here (default demo names: `MotoGP0.png`, `MotoGP1.png`).
@@ -23,6 +22,7 @@ pip install -r requirements.txt
 3. Run a demo — outputs will be written to `Outputs/` (the scripts create the folder if missing):
 
 ```bash
+cd Feature Extraction
 python3 SIFT.py
 python3 ORB.py
 python3 FAST.py
@@ -43,10 +43,3 @@ Typical output names include `out_feat_*`, `out_matches*`, and `out_flow*` image
 ```bash
 pip install --upgrade opencv-contrib-python
 ```
-
-- If your images are named differently, either rename them to `MotoGP0.png`/`MotoGP1.png` or I can add CLI options to the scripts to accept arbitrary paths.
-
-## Next steps (optional)
-- Add `argparse` to scripts for configurable input/output paths.
-- Factor shared utilities (I/O, visualization) into a `utils.py` module.
-- Add tests and CI that validate the demos (if desired).
