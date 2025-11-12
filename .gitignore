@@ -1,0 +1,22 @@
+# Python cache and environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Test / coverage
+.pytest_cache/
+coverage.xml
+
+# Output images from demos
+#out_*.png
+
+# Numpy / calibration files (ignore if you regenerate locally)
+*.npz

@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Upgrade pip
+      run: python -m pip install --upgrade pip
+
+    - name: Install dependencies
+      run: |
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        else
+          pip install opencv-contrib-python numpy
+        fi
+
+    - name: Run SIFT demo (smoke)
+      run: python3 SIFT.py
+
+    - name: Run ORB demo (smoke)
+      run: python3 ORB.py
+
+    - name: Run FAST demo (smoke)
+      run: python3 FAST.py
+
+    - name: Run LK demo (smoke)
+      run: python3 LK.py
+
+    - name: List output images
+      run: ls -la out_*.png || true
