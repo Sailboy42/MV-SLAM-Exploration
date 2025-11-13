@@ -15,3 +15,5 @@ This repo is a demo on using OpenCV to perform monocular visual odometry from a 
 
 ```opencv.py```: A script that you can run on the KITTI odometry dataset that outputs a live image of the path taken along with a video of the camera feed with visual tracking features overlayed.
 
+# Sources
+This implementation follows the steps outlined in Avi Singh's C++ tutorial on monocular visual odometry. (https://avisingh599.github.io/vision/monocular-vo/)
